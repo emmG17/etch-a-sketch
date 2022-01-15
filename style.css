@@ -1,0 +1,21 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 960px;
+}
+
+.pixel {
+    border: 1px solid black;
+    width: 60px;
+    height: 60px;
+}
