@@ -3,6 +3,7 @@ let n_rows = 16;
 let n_cols = 16;
 let n_pixels = n_rows * n_cols;
 const pixelGrid = document.querySelector(".grid-container");
+const resetButton = document.getElementById("reset");
 
 function defineGrid(grid, n_rows, n_cols) {
     grid.style.gridTemplateRows = `repeat(${n_rows}, 1fr)`;
@@ -41,6 +42,12 @@ function populateGrid(grid, n_pixels) {
         grid.appendChild(pixel);
     }
 }
+
+resetButton.addEventListener("click", () => {
+    pixelGrid.innerHTML = "";
+    defineGrid(pixelGrid, n_rows, n_cols);
+    populateGrid(pixelGrid, n_pixels);
+})
 
 defineGrid(pixelGrid, n_rows, n_cols);
 populateGrid(pixelGrid, n_pixels);
