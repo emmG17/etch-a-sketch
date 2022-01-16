@@ -8,15 +8,17 @@ html {
     box-sizing: border-box;
 }
 
+body {
+    padding: 0;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
-    width: 960px;
+    width: 40vw;
 }
 
 .pixel {
-    border: 1px solid black;
-    width: 60px;
-    height: 60px;
+    border: 0 solid black;
 }
