@@ -1,8 +1,13 @@
 // Create 16x16 pixel divs
-let n_rows = 16;
+let n_rows = 10;
 let n_cols = 16;
 let n_pixels = n_rows * n_cols;
 const pixelGrid = document.querySelector(".grid-container");
+
+function defineGrid(grid, n_rows, n_cols) {
+    grid.style.gridTemplateRows = `repeat(${n_rows}, 1fr)`;
+    grid.style.gridTemplateColumns = `repeat(${n_cols}, 1fr)`;
+}
 
 function getPixels(n_pixels) {
     let pixels = [];
@@ -13,7 +18,7 @@ function getPixels(n_pixels) {
         pixels.push(pixel);
     }
 
-    return pixels
+    return pixels;
 }
 
 function populateGrid(grid, n_pixels) {
@@ -27,4 +32,5 @@ function populateGrid(grid, n_pixels) {
     }
 }
 
+defineGrid(pixelGrid, n_rows, n_cols);
 populateGrid(pixelGrid, n_pixels);
