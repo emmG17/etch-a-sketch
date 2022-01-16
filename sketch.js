@@ -5,19 +5,19 @@ const pixelGrid = document.querySelector(".grid-container");
 const resetButton = document.getElementById("reset");
 const createGridButton = document.getElementById("create-grid");
 const colsInput = document.getElementById("n-cols");
-const rowsInput = document.getElementById("n-rows")
+const rowsInput = document.getElementById("n-rows");
 
 function defineGrid(grid, n_rows, n_cols) {
     grid.style.gridTemplateRows = `repeat(${n_rows}, 1fr)`;
     grid.style.gridTemplateColumns = `repeat(${n_cols}, 1fr)`;
 }
 
-function createPixel(){
+function createPixel() {
     const pixel = document.createElement("div");
     pixel.classList.add("pixel");
 
-    pixel.addEventListener("click", ()=>{
-        pixel.classList.toggle('selected');
+    pixel.addEventListener("click", () => {
+        pixel.classList.toggle("selected");
     });
 
     return pixel;
@@ -45,7 +45,7 @@ function populateGrid(grid, n_pixels) {
     }
 }
 
-function createGrid(n_rows, n_cols){
+function createGrid(n_rows, n_cols) {
     let n_pixels = n_rows * n_cols;
     pixelGrid.innerHTML = "";
     defineGrid(pixelGrid, n_rows, n_cols);
@@ -56,19 +56,16 @@ resetButton.addEventListener("click", () => {
     createGrid(nCols, nRows);
 });
 
-
 createGridButton.addEventListener("click", () => {
     let cols = colsInput.valueAsNumber;
     let rows = rowsInput.valueAsNumber;
-    let isValidInput = (rows && cols) && (colsInput.validity.valid && rowsInput.validity.valid)
-    if (isValidInput)  {
+    let isValidInput =
+        rows && cols && colsInput.validity.valid && rowsInput.validity.valid;
+    if (isValidInput) {
         nRows = rows;
         nCols = cols;
+        createGrid(nCols, nRows);
     }
-
-    pixelGrid.innerHTML = "";
-    defineGrid(pixelGrid, nRows, nCols);
-    populateGrid(pixelGrid, nRows*nCols);
 });
 
 colsInput.setAttribute("placeholder", nCols.toString());
