@@ -1,5 +1,5 @@
 // Create 16x16 pixel divs
-let n_rows = 10;
+let n_rows = 16;
 let n_cols = 16;
 let n_pixels = n_rows * n_cols;
 const pixelGrid = document.querySelector(".grid-container");
