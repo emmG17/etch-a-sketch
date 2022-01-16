@@ -26,3 +26,6 @@ body {
     background-color: #444444;
 }
 
+.selected {
+    background-color: #222222;
+}

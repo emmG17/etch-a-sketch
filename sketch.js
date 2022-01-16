@@ -9,12 +9,22 @@ function defineGrid(grid, n_rows, n_cols) {
     grid.style.gridTemplateColumns = `repeat(${n_cols}, 1fr)`;
 }
 
+function createPixel(){
+    const pixel = document.createElement("div");
+    pixel.classList.add("pixel");
+
+    pixel.addEventListener("click", ()=>{
+        pixel.classList.toggle('selected');
+    });
+
+    return pixel;
+}
+
 function getPixels(n_pixels) {
     let pixels = [];
 
     for (let i = 0; i < n_pixels; i++) {
-        const pixel = document.createElement("div");
-        pixel.classList.add("pixel");
+        const pixel = createPixel();
         pixels.push(pixel);
     }
 
