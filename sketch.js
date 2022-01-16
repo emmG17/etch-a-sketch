@@ -16,12 +16,15 @@ function getPixels(n_pixels) {
     return pixels
 }
 
-const pixels = getPixels(n_pixels);
-
-// Append pixels to the grid
-for (pixel of pixels) {
-    let pixelBorderWidth = 1;
-    pixel.style.borderWidth = `${pixelBorderWidth}px`;
-    pixel.style.paddingBottom = `calc(100% - ${2 * pixelBorderWidth}px)`;
-    pixelGrid.appendChild(pixel);
+function populateGrid(grid, n_pixels) {
+    const pixels = getPixels(n_pixels);
+    // Append pixels to the grid
+    for (pixel of pixels) {
+        let pixelBorderWidth = 1;
+        pixel.style.borderWidth = `${pixelBorderWidth}px`;
+        pixel.style.paddingBottom = `calc(100% - ${2 * pixelBorderWidth}px)`;
+        grid.appendChild(pixel);
+    }
 }
+
+populateGrid(pixelGrid, n_pixels);
