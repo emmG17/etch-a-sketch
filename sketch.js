@@ -7,9 +7,9 @@ const createGridButton = document.getElementById("create-grid");
 const colsInput = document.getElementById("n-cols");
 const rowsInput = document.getElementById("n-rows");
 
-function defineGrid(grid, n_rows, n_cols) {
-    grid.style.gridTemplateRows = `repeat(${n_rows}, 1fr)`;
-    grid.style.gridTemplateColumns = `repeat(${n_cols}, 1fr)`;
+function defineGrid(grid, nRows, nCols) {
+    grid.style.gridTemplateRows = `repeat(${nRows}, 1fr)`;
+    grid.style.gridTemplateColumns = `repeat(${nCols}, 1fr)`;
 }
 
 function createPixel() {
@@ -23,10 +23,10 @@ function createPixel() {
     return pixel;
 }
 
-function getPixels(n_pixels) {
+function getPixels(nPixels) {
     let pixels = [];
 
-    for (let i = 0; i < n_pixels; i++) {
+    for (let i = 0; i < nPixels; i++) {
         const pixel = createPixel();
         pixels.push(pixel);
     }
@@ -34,8 +34,8 @@ function getPixels(n_pixels) {
     return pixels;
 }
 
-function populateGrid(grid, n_pixels) {
-    const pixels = getPixels(n_pixels);
+function populateGrid(grid, nPixels) {
+    const pixels = getPixels(nPixels);
     // Append pixels to the grid
     for (pixel of pixels) {
         let pixelBorderWidth = 1;
@@ -45,11 +45,11 @@ function populateGrid(grid, n_pixels) {
     }
 }
 
-function createGrid(n_rows, n_cols) {
-    let n_pixels = n_rows * n_cols;
+function createGrid(nRows, nRows) {
+    let nPixels = nRows * nRows;
     pixelGrid.innerHTML = "";
-    defineGrid(pixelGrid, n_rows, n_cols);
-    populateGrid(pixelGrid, n_pixels);
+    defineGrid(pixelGrid, nRows, nRows);
+    populateGrid(pixelGrid, nPixels);
 }
 
 resetButton.addEventListener("click", () => {
