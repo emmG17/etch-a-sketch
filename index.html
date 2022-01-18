@@ -5,19 +5,43 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Etch-a-Sketch</title>
-        <link rel="stylesheet" href="style.css"/>
+        <link rel="stylesheet" href="style.css" />
         <script src="sketch.js" defer></script>
     </head>
     <body>
         <header>
             <h1>Etch-a-Sketch</h1>
         </header>
-        <div class="grid-container"></div>
-        <button id="reset">Reset</button>
-        <label for="n-rows">Rows: </label>
-        <input type="number" name="rows" id="n-rows" max="100" min="3">
-        <label for="n-cols">Columns: </label>
-        <input type="number" name="cols" id="n-cols" max="100" min="3">
-        <button id="create-grid" type="button">Create</button>
+        <main>
+            <div class="grid-container"></div>
+            <div class="grid-options">
+                <button id="reset">Reset</button>
+                <div class="grid-customization">
+                    <div class="user-input">
+                        <div class="row">
+                            <label for="n-rows">Rows: </label>
+                            <input
+                                type="number"
+                                name="rows"
+                                id="n-rows"
+                                max="100"
+                                min="3"
+                            />
+                        </div>
+                        <div class="column">
+                            <label for="n-cols">Columns: </label>
+                            <input
+                                type="number"
+                                name="cols"
+                                id="n-cols"
+                                max="100"
+                                min="3"
+                            />
+                        </div>
+                    </div>
+                    <button id="create-grid" type="button">Create</button>
+                </div>
+            </div>
+        </main>
     </body>
 </html>
