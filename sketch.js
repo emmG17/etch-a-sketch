@@ -45,10 +45,10 @@ function populateGrid(grid, nPixels) {
     }
 }
 
-function createGrid(nRows, nRows) {
-    let nPixels = nRows * nRows;
+function createGrid(nRows, nCols) {
+    let nPixels = nRows * nCols;
     pixelGrid.innerHTML = "";
-    defineGrid(pixelGrid, nRows, nRows);
+    defineGrid(pixelGrid, nRows, nCols);
     populateGrid(pixelGrid, nPixels);
 }
 
