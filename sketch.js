@@ -64,7 +64,7 @@ createGridButton.addEventListener("click", () => {
     if (isValidInput) {
         nRows = rows;
         nCols = cols;
-        createGrid(nCols, nRows);
+        createGrid(nRows, nCols);
     }
 });
 
